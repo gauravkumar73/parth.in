@@ -1,6 +1,16 @@
-<footer>
-    <p>© <?php echo date("Y"); ?> Corntron. All Rights Reserved.</p>
-</footer>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corntron</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-</body>
-</html>
+<header>
+    <div class="logo">CORNTRON</div>
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="contact.php">Contact</a>
+    </nav>
+</header>
