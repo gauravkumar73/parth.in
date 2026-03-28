@@ -1,0 +1,47 @@
+.testimonial-card {
+  background: #f5f7f6;
+  border-radius: 15px;
+  padding: 25px;
+  position: relative;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.testimonial-text {
+  font-size: 14px;
+  margin: 20px 0;
+  color: #444;
+}
+
+/* Quotes */
+.quote-left {
+  font-size: 25px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.quote-right {
+  font-size: 25px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+/* Bottom section */
+.testimonial-bottom {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.avatar {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Stars */
+.stars {
+  color: gold;
+  margin-bottom: 5px;
+}

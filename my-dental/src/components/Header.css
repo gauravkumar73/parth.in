@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2f5f9f;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #0b2c4d;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  z-index: 100;
+}
+
+.dropdown-menu p {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.dropdown-menu p:hover {
+  color: #00ffcc;
+}
+
+/* Button */
+.quote-btn {
+  background: linear-gradient(to right, #2f5f9f, #4caf50);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
