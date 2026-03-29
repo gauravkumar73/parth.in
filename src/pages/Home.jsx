@@ -1,6 +1,7 @@
 import ServicesSection from "../components/ServicesSection";
 import Industries from "../components/Industries";
 import Testimonials from "../components/Testimonials";
+import OfferSection from "../components/OfferSection";
 function Home() {
   return (
     <div>
@@ -8,6 +9,7 @@ function Home() {
       <ServicesSection />
       <Industries />
       <Testimonials />
+      <OfferSection />
     </div>
   );
 }
