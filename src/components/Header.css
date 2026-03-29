@@ -25,6 +25,9 @@
   font-size: 14px;
 }
 
+.nav a:hover {
+  color: #2f5f9f;
+}
 /* Dropdown */
 .dropdown {
   position: relative;
