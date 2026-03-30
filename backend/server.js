@@ -37,46 +37,32 @@ const Contact = mongoose.model("Contact", {
 // API
 app.post("/contact", async (req, res) => {
   try {
+    console.log("📥 Incoming Data:", req.body);
+
     const { name, email, message } = req.body;
 
-    if (!name || !email || !message) {
-      return res.status(400).send("All fields required");
-    }
-
-    await new Contact({ name, email, message }).save();
+    const data = new Contact({ name, email, message });
+    await data.save();
+    console.log("✅ Data saved to MongoDB");
 
     try {
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
         subject: "New Contact Form",
-        html: `<p>${name} (${email}): ${message}</p>`,
+        html: `<p>${name} - ${email} - ${message}</p>`,
       });
 
-      await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: "Thank You",
-        html: `<h3>Thanks ${name}</h3>`,
-      });
+      console.log("✅ Email sent");
 
-    } catch (e) {
-      console.log("⚠️ Mail Failed:", e.message);
+    } catch (mailErr) {
+      console.log("❌ Email Error:", mailErr.message);
     }
 
     res.send("Success ✅");
 
   } catch (err) {
-    console.log("❌ ERROR:", err.message);
-    res.status(500).send("Server Error");
+    console.log("❌ MAIN ERROR:", err.message);
+    res.status(500).send(err.message);
   }
 });
-
-// Root
-app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
-});
-
-// Start
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log("🚀 Server running"));
