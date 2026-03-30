@@ -5,8 +5,8 @@ function Header() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-black px-4">
       
       {/* Logo */}
-     <Link to="/" className="navbar-brand fw-bold text-primary text-decoration-none">
-  Figmanet
+    <Link to="/">
+  <img src="/logo.png" alt="logo" className="logo-img" />
 </Link>
 
       {/* Mobile Toggle Button */}
