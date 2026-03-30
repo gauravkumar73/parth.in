@@ -6,7 +6,7 @@ function Header() {
       
       {/* Logo */}
     <Link to="/">
-  <img src="/logo.png" alt="logo" className="logo-img" />
+  <img src="/src/assets/logoo.png" alt="logo" className="logo-img" height={40} />
 </Link>
 
       {/* Mobile Toggle Button */}
