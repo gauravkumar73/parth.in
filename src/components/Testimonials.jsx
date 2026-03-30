@@ -20,7 +20,7 @@ function Testimonials() {
   ];
 
   return (
-    <div className="container py-5 text-center">
+    <div className="container py-5 text-center bg-black">
 
       <h2 className="fw-bold mb-2">Our Clients Feedback</h2>
       <p className="text-muted mb-5">
