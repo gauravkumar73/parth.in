@@ -1,6 +1,6 @@
 function ServicesSection() {
   return (
-    <div style={{ padding: "50px", textAlign: "center", background: "#f5f7f6" }}>
+    <div style={{ padding: "50px", textAlign: "center", background: "#black" }}>
       
       <h4 style={{ color: "green", letterSpacing: "2px" }}>OUR SERVICES</h4>
       <h1>High Quality Services for You.</h1>

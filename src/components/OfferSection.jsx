@@ -40,7 +40,7 @@ function OfferSection() {
   };
 
   return (
-    <div className="container py-5 text-light">
+    <div className="container py-5 text-light bg-black rounded-4">
       <div className="text-center mb-4">
         <p className="text-primary">Our Offerings</p>
         <h2 className="fw-bold">Your Profitability Enabler</h2>
