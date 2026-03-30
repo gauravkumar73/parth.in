@@ -41,8 +41,7 @@ function Footer() {
         <div className="footer-col">
           <h3>Reach us</h3>
           <p>Noida, Delhi, India</p>
-          <p>📞 +91 9821658272</p>
-          <p>📧 hello@figmanetsolutions.com</p>
+          <p>📧 123@gmail.com</p>
         </div>
 
       </div>
