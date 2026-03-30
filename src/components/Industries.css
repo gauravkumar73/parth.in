@@ -5,7 +5,7 @@
 .industries {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(to right, #eef3f8, #f6f9f7);
+  background:black;
 }
 
 .subtitle {
@@ -16,7 +16,7 @@
 }
 
 .desc {
-  color: #666;
+  color:white;
   margin-bottom: 40px;
 }
 
@@ -28,7 +28,7 @@
 
 .card {
   position: relative;
-  background: #f9fbfc;
+  background: black;
   border-radius: 20px;
   padding: 30px;
   text-align: left;
@@ -55,7 +55,7 @@
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: black;
+  color:white;
 }
 
 /* TEXT */
@@ -64,6 +64,6 @@
 }
 
 .card p {
-  color: #555;
+  color:white;
   font-size: 14px;
 }
