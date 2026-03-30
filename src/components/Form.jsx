@@ -16,7 +16,7 @@ function Form() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/contact", form);
+      await axios.post("https://parth-in.onrender.com/contact", form);
       alert("Message Sent ✅");
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
