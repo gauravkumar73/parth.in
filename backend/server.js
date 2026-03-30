@@ -67,6 +67,7 @@ app.post("/contact", async (req, res) => {
 
     res.send("Data Saved & Email Sent ✅");
   } catch (err) {
+    console.log(req.body);
     console.log(err);
     res.status(500).send("Error");
   }
