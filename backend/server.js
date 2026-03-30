@@ -22,6 +22,13 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
+transporter.verify((err, success) => {
+  if (err) {
+    console.log("❌ Mail Error:", err);
+  } else {
+    console.log("✅ Mail Server Ready");
+  }
+});
 
 // Schema
 const ContactSchema = new mongoose.Schema({
