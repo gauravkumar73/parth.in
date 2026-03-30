@@ -41,16 +41,31 @@ app.post("/contact", async (req, res) => {
 
     const { name, email, message } = req.body;
 
+    // ❗ Validation (important)
+    if (!name || !email || !message) {
+      return res.status(400).send("All fields required");
+    }
+
+    // ✅ Save to DB
     const data = new Contact({ name, email, message });
     await data.save();
     console.log("✅ Data saved to MongoDB");
 
+    // ✅ Send response FIRST (fast response)
+    res.send("Form Submitted ✅");
+
+    // ⚠️ Email async (background me chalega)
     try {
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
         subject: "New Contact Form",
-        html: `<p>${name} - ${email} - ${message}</p>`,
+        html: `
+          <h3>New Contact</h3>
+          <p><b>Name:</b> ${name}</p>
+          <p><b>Email:</b> ${email}</p>
+          <p><b>Message:</b> ${message}</p>
+        `,
       });
 
       console.log("✅ Email sent");
@@ -59,10 +74,8 @@ app.post("/contact", async (req, res) => {
       console.log("❌ Email Error:", mailErr.message);
     }
 
-    res.send("Success ✅");
-
   } catch (err) {
     console.log("❌ MAIN ERROR:", err.message);
-    res.status(500).send(err.message);
+    res.status(500).send("Server Error");
   }
 });
