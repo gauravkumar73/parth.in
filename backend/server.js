@@ -45,13 +45,16 @@ app.post("/contact", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // 1️⃣ Save to DB
+    if (!name || !email || !message) {
+      return res.status(400).send("All fields required");
+    }
+
+    // ✅ Save DB
     const data = new Contact({ name, email, message });
     await data.save();
 
-    // 2️⃣ Try sending email (FAIL ho to bhi API chale)
+    // ✅ Email try-catch (IMPORTANT FIX)
     try {
-      // Email to YOU
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
@@ -64,39 +67,22 @@ app.post("/contact", async (req, res) => {
         `,
       });
 
-      // Email to CLIENT
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: email,
-        subject: "Thank You for Contacting Us",
-        html: `
-          <h3>Thank you ${name} 🙌</h3>
-          <p>We received your message and will contact you soon.</p>
-        `,
+        subject: "Thank You",
+        html: `<h3>Thanks ${name}</h3><p>We received your message</p>`,
       });
 
-      console.log("✅ Emails Sent");
-
     } catch (mailErr) {
-      console.log("⚠️ Email Failed:", mailErr.message);
+      console.log("❌ Mail Error:", mailErr.message);
+      // 👉 mail fail ho bhi jaye toh API crash nahi hogi
     }
 
-    // 3️⃣ Always success response
-    res.send("Form Submitted ✅");
+    res.send("Success ✅");
 
   } catch (err) {
-    console.log("❌ MAIN ERROR:", err.message);
+    console.log("🔥 MAIN ERROR:", err);
     res.status(500).send("Server Error");
   }
-});
-
-// Test route
-app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
-});
-
-// Server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
 });
