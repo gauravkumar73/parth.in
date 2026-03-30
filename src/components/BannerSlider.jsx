@@ -17,7 +17,7 @@ const BannerSlider = () => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img
-            src="https://via.placeholder.com/1920x600"
+            src="/baner1.jpeg"
             className="d-block w-100"
             alt="Banner 1"
           />
@@ -29,7 +29,7 @@ const BannerSlider = () => {
 
         <div className="carousel-item">
           <img
-            src="https://via.placeholder.com/1920x600/0000FF/FFFFFF"
+              src="/banner.jpeg"
             className="d-block w-100"
             alt="Banner 2"
           />
@@ -41,7 +41,7 @@ const BannerSlider = () => {
 
         <div className="carousel-item">
           <img
-            src="https://via.placeholder.com/1920x600/FF0000/FFFFFF"
+              src="/hh.jpeg"
             className="d-block w-100"
             alt="Banner 3"
           />
