@@ -8,12 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ MongoDB Connect
+// MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch(err => console.log("❌ Mongo Error:", err));
 
-// ✅ Email Transporter
+// Mail transporter
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -22,81 +22,61 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// ✅ Verify Email (optional debug)
-transporter.verify((err, success) => {
-  if (err) {
-    console.log("❌ Mail Error:", err.message);
-  } else {
-    console.log("✅ Mail Server Ready");
-  }
+transporter.verify((err) => {
+  if (err) console.log("❌ Mail Error:", err.message);
+  else console.log("✅ Mail Server Ready");
 });
 
 // Schema
-const ContactSchema = new mongoose.Schema({
+const Contact = mongoose.model("Contact", {
   name: String,
   email: String,
   message: String,
 });
 
-const Contact = mongoose.model("Contact", ContactSchema);
-
-// ✅ API (SAFE VERSION)
+// API
 app.post("/contact", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // 1️⃣ Save to DB
-    const data = new Contact({ name, email, message });
-    await data.save();
+    if (!name || !email || !message) {
+      return res.status(400).send("All fields required");
+    }
 
-    // 2️⃣ Try sending email (FAIL ho to bhi API chale)
+    await new Contact({ name, email, message }).save();
+
     try {
-      // Email to YOU
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_USER,
-        subject: "New Contact Form Submission",
-        html: `
-          <h3>New Message</h3>
-          <p><b>Name:</b> ${name}</p>
-          <p><b>Email:</b> ${email}</p>
-          <p><b>Message:</b> ${message}</p>
-        `,
+        subject: "New Contact Form",
+        html: `<p>${name} (${email}): ${message}</p>`,
       });
 
-      // Email to CLIENT
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: email,
-        subject: "Thank You for Contacting Us",
-        html: `
-          <h3>Thank you ${name} 🙌</h3>
-          <p>We received your message and will contact you soon.</p>
-        `,
+        subject: "Thank You",
+        html: `<h3>Thanks ${name}</h3>`,
       });
 
-      console.log("✅ Emails Sent");
-
-    } catch (mailErr) {
-      console.log("⚠️ Email Failed:", mailErr.message);
+    } catch (e) {
+      console.log("⚠️ Mail Failed:", e.message);
     }
 
-    // 3️⃣ Always success response
-    res.send("Form Submitted ✅");
+    res.send("Success ✅");
 
   } catch (err) {
-    console.log("❌ MAIN ERROR:", err.message);
+    console.log("❌ ERROR:", err.message);
     res.status(500).send("Server Error");
   }
 });
 
-// Test route
+// Root
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-// Server
+// Start
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log("🚀 Server running"));
