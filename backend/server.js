@@ -3,6 +3,8 @@ const nodemailer = require("nodemailer");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+app.use("/uploads", express.static("uploads"));
+app.use("/api/banner", require("./routes/banner"));
 
 const app = express();
 app.use(cors({
