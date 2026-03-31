@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 app.use("/uploads", express.static("uploads"));
 app.use("/api/banner", require("./routes/banner"));
+app.use("/api/user", require("./routes/user"));
 
 const app = express();
 app.use(cors({

@@ -69,3 +69,12 @@
   height: 40px;
   margin-right: 10px;
 }
+.btn-success {
+  background: linear-gradient(45deg, #00c853, #64dd17);
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+}
