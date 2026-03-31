@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-col">
           <h3>About us</h3>
           <p>
-            Figmanet is an Information Technology Company which provides services
+            Parth is an Information Technology Company which provides services
             in Web Designing, Web Development, Graphic Designing, E-commerce Website
             Development, SEO, Digital Marketing, Mobile Apps Development and more.
           </p>
