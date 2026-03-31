@@ -1,4 +1,6 @@
+import "./BannerSlider.css";
 import { Link } from "react-router-dom";
+
 const BannerSlider = () => {
   return (
     <div
@@ -15,41 +17,73 @@ const BannerSlider = () => {
 
       {/* Slides */}
       <div className="carousel-inner">
+
+        {/* Slide 1 */}
         <div className="carousel-item active">
+          {/* Desktop Image */}
           <img
-            src="/baner1.jpeg"
-            className="d-block w-100"
+            src="/bann1.jpeg"
+            className="d-none d-md-block w-100"
             alt="Banner 1"
           />
+
+          {/* Mobile Image */}
+          <img
+            src="/mob1.jpeg"
+            className="d-block d-md-none w-100"
+            alt="Mobile Banner 1"
+          />
+
           <div className="carousel-caption">
             <h2>Welcome to Our Store</h2>
             <p>Best products at best price</p>
           </div>
         </div>
 
+        {/* Slide 2 */}
         <div className="carousel-item">
+          {/* Desktop Image */}
           <img
-              src="/banner.jpeg"
-            className="d-block w-100"
+            src="/bannerdes.jpeg"
+            className="d-none d-md-block w-100"
             alt="Banner 2"
           />
+
+          {/* Mobile Image */}
+          <img
+            src="/mob2.jpeg"
+            className="d-block d-md-none w-100"
+            alt="Mobile Banner 2"
+          />
+
           <div className="carousel-caption">
             <h2>Big Sale</h2>
             <p>Up to 50% Off</p>
           </div>
         </div>
 
+        {/* Slide 3 */}
         <div className="carousel-item">
+          {/* Desktop Image */}
           <img
-              src="/hh.jpeg"
-            className="d-block w-100"
+            src="/bannerdes2.jpeg"
+            className="d-none d-md-block w-100"
             alt="Banner 3"
           />
+
+          {/* Mobile Image */}
+          <img
+            src="/mob3.jpeg"
+            className="d-block d-md-none w-100"
+            alt="Mobile Banner 3"
+          />
+
           <div className="carousel-caption">
             <h2>New Arrivals</h2>
             <p>Check out latest products</p>
           </div>
         </div>
+
       </div>
 
       {/* Controls */}

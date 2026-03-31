@@ -1,0 +1,83 @@
+/* Banner full width fix */
+#bannerCarousel {
+  width: 100%;
+}
+
+/* Image styling */
+#bannerCarousel img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Mobile height */
+@media (max-width: 768px) {
+  #bannerCarousel img {
+    height: 250px;
+  }
+}
+
+/* Caption styling */
+.carousel-caption {
+  bottom: 20%;
+  z-index: 2;
+}
+
+/* Dark overlay for better text visibility */
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Ensure caption is above overlay */
+.carousel-caption h2,
+.carousel-caption p {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+}
+
+/* Heading style */
+.carousel-caption h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* Paragraph style */
+.carousel-caption p {
+  font-size: 18px;
+}
+
+/* Mobile text adjust */
+@media (max-width: 768px) {
+  .carousel-caption h2 {
+    font-size: 20px;
+  }
+
+  .carousel-caption p {
+    font-size: 14px;
+  }
+
+  .carousel-caption {
+    bottom: 10%;
+  }
+}
+
+/* Arrow buttons visibility */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 70% 70%;
+}
+
+/* Indicator dots */
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
