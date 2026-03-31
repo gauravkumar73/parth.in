@@ -1,51 +1,104 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+// Website pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+
+// Admin
 import Login from "./pages/Login";
-import Admin from "./pages/Admin"; // 👈 add karo
+import Dashboard from "./pages/Dashboard";
+import Enquiries from "./pages/Enquiries";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-// 👇 Layout control component
-function Layout() {
-  const location = useLocation();
+// Services pages
+import WebDesign from "./pages/services/WebDesign";
+import WebDevelopment from "./pages/services/WebDevelopment";
+import WebHosting from "./pages/services/WebHosting";
+import GraphicDesign from "./pages/services/GraphicDesign";
+import MobileApp from "./pages/services/MobileApp";
+import DigitalMarketing from "./pages/services/DigitalMarketing";
+import PaymentGateway from "./pages/services/PaymentGateway";
+import Ecommerce from "./pages/services/Ecommerce";
+import SEO from "./pages/services/SEO";
+import Consultation from "./pages/services/Consultation";
 
-  // 👇 jaha header/footer nahi chahiye
-  const hideLayout =
-    location.pathname === "/login" || location.pathname === "/admin";
-
-  return (
-    <>
-      {!hideLayout && <Header />}
-
-      <Routes>
-        {/* 🌐 Public */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-
-        {/* 🔐 Login */}
-        <Route path="/login" element={<Login />} />
-
-        {/* 🔒 Admin */}
-        <Route path="/admin" element={<Admin />} />
-
-        {/* baaki routes same rehne de */}
-      </Routes>
-
-      {!hideLayout && <Footer />}
-    </>
-  );
-}
+// Footer pages
+import Privacy from "./pages/footer/Privacy";
+import Terms from "./pages/footer/Terms";
+import Career from "./pages/footer/Career";
+import FAQ from "./pages/footer/FAQ";
+import Blog from "./pages/footer/Blog";
 
 function App() {
   return (
     <Router>
-      <Layout />
+
+      <Routes>
+
+        {/* 🌐 WEBSITE (with Header/Footer) */}
+        <Route
+          path="*"
+          element={
+            <>
+              <Header />
+
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/contact" element={<Contact />} />
+
+                <Route path="/web-design" element={<WebDesign />} />
+                <Route path="/web-development" element={<WebDevelopment />} />
+                <Route path="/web-hosting" element={<WebHosting />} />
+                <Route path="/graphic-design" element={<GraphicDesign />} />
+                <Route path="/mobile-app" element={<MobileApp />} />
+                <Route path="/digital-marketing" element={<DigitalMarketing />} />
+                <Route path="/payment-gateway" element={<PaymentGateway />} />
+                <Route path="/ecommerce" element={<Ecommerce />} />
+                <Route path="/seo" element={<SEO />} />
+                <Route path="/consultation" element={<Consultation />} />
+
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/career" element={<Career />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/blog" element={<Blog />} />
+              </Routes>
+
+              <Footer />
+            </>
+          }
+        />
+
+        {/* 🔐 ADMIN (NO HEADER FOOTER) */}
+        <Route path="/admin" element={<Login />} />
+
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin/enquiries"
+          element={
+            <ProtectedRoute>
+              <Enquiries />
+            </ProtectedRoute>
+          }
+        />
+
+      </Routes>
+
     </Router>
   );
 }
