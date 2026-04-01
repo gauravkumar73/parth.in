@@ -1,44 +1,33 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
-const EnquiryTable = () => {
-  const [data, setData] = useState([]);
+function AdminPanel() {
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/user/all")
-      .then((res) => setData(res.data));
+    const fetchData = async () => {
+      const snapshot = await getDocs(collection(db, "users"));
+      setUsers(snapshot.docs.map(doc => doc.data()));
+    };
+
+    fetchData();
   }, []);
 
   return (
     <div>
-      <table border="1" cellPadding="10" width="100%">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Date</th>
-            <th>Purpose</th>
-          </tr>
-        </thead>
+      <h2>User Data</h2>
 
-        <tbody>
-          {data.map((item, i) => (
-            <tr key={i}>
-              <td>{item.type}</td>
-              <td>{item.name}</td>
-              <td>{item.email}</td>
-              <td>{item.phone}</td>
-              <td>{item.date || "-"}</td>
-              <td>{item.purpose || "-"}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {users.map((user, i) => (
+        <div key={i}>
+          <p>{user.firstName} {user.lastName}</p>
+          <p>{user.email}</p>
+          <p>{user.phone}</p>
+          <p>{user.city}</p>
+        </div>
+      ))}
     </div>
   );
-};
+}
 
-export default EnquiryTable;
+export default AdminPanel;
