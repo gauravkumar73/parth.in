@@ -23,19 +23,29 @@ function SignupForm() {
     e.preventDefault();
 
     try {
-      // 🔥 Save to Firebase
+      // 🔥 Firebase
       await addDoc(collection(db, "users"), {
         ...form,
         createdAt: new Date()
       });
 
-      // 📩 Email send (EmailJS)
-      emailjs.send(
-        "service_g1239zt",     // 👈 replace
-        "template_p3siwhp",    // 👈 replace
+      // 🔥 Admin mail
+      await emailjs.send(
+        "service_trqzaqh",
+        "template_p3siwhp",
         form,
-        "HDnieeFduOvZhn1Ur"      // 👈 replace
+        "HDnieeFduOvZhn1Ur"
       );
+
+      // 🔥 Auto reply
+      await emailjs.send(
+        "service_trqzaqh",
+        "template_1fbwuf",
+        form,
+        "HDnieeFduOvZhn1Ur"
+      );
+
+      alert("Form Submitted ✅");
 
       // 📱 WhatsApp
       const message = `New Enquiry:
@@ -44,11 +54,11 @@ Phone: ${form.phone}
 Email: ${form.email}
 City: ${form.city}`;
 
-      window.open(`https://wa.me/918192986623?text=${encodeURIComponent(message)}`);
+      window.open(
+        `https://wa.me/918192986623?text=${encodeURIComponent(message)}`
+      );
 
-      alert("Form Submitted ✅");
-
-      // reset form
+      // 🔄 Reset
       setForm({
         firstName: "",
         lastName: "",
@@ -129,7 +139,7 @@ City: ${form.city}`;
             />
           </div>
 
-          <button className="btn btn-primary w-100 py-2 fw-bold">
+          <button type="submit" className="btn btn-primary w-100 py-2 fw-bold">
             Submit Now 🚀
           </button>
         </form>
