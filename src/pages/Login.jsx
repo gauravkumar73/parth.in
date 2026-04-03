@@ -73,7 +73,7 @@ const Login = () => {
             </div>
 
             <div className="text-center footer mt-4">
-              Powered By <b>commrz</b> © 2019-2026
+              Powered By <b>Webnirmaan</b> © 2019-2026
             </div>
 
           </div>
