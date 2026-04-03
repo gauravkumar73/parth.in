@@ -23,7 +23,7 @@ function Testimonials() {
     <div className="container py-5 text-center bg-black">
 
       <h2 className="fw-bold mb-2">Our Clients Feedback</h2>
-      <p className="text-muted mb-5">
+      <p className=" mb-5">
         Know what people are saying about us around the globe.
       </p>
 
@@ -36,7 +36,7 @@ function Testimonials() {
               {/* Quote Top */}
               <FaQuoteLeft className="position-absolute top-0 start-0 m-3 fs-4 text-dark" />
 
-              <p className="text-muted mt-4">{item.text}</p>
+              <p className=" mt-4">{item.text}</p>
 
               {/* Bottom Section */}
               <div className="mt-4 pt-3 border-top text-center">
@@ -50,7 +50,7 @@ function Testimonials() {
                 </div>
 
                 <h6 className="fw-bold mb-0">{item.name}</h6>
-                <small className="text-muted">{item.role}</small>
+                <small className="">{item.role}</small>
 
               </div>
 
