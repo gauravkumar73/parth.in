@@ -34,7 +34,7 @@ const BannerSlider = () => {
             alt="Mobile Banner 1"
           />
 
-          <div className="carousel-caption">
+          <div className="d-none carousel-caption">
             <h2>Welcome to Our Store</h2>
             <p>Best products at best price</p>
           </div>
@@ -56,7 +56,7 @@ const BannerSlider = () => {
             alt="Mobile Banner 2"
           />
 
-          <div className="carousel-caption">
+          <div className="d-nonecarousel-caption">
             <h2>Big Sale</h2>
             <p>Up to 50% Off</p>
           </div>
@@ -78,7 +78,7 @@ const BannerSlider = () => {
             alt="Mobile Banner 3"
           />
 
-          <div className="carousel-caption">
+          <div className="d-none carousel-caption">
             <h2>New Arrivals</h2>
             <p>Check out latest products</p>
           </div>
