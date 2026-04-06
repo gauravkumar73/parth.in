@@ -29,21 +29,21 @@ function SignupForm() {
         createdAt: new Date()
       });
 
-      // 🔥 Admin mail
-      await emailjs.send(
-        "service_trqzaqh",
-        "template_p3siwhp",
-        form,
-        "HDnieeFduOvZhn1Ur"
-      );
+     // 🔥 Admin mail
+await emailjs.send(
+  "service_trqzaqh",
+  "template_p3siwhp",
+  form,
+  "HDnieeFduOvZhn1Ur"
+);
 
-      // 🔥 Auto reply
-      await emailjs.send(
-        "service_trqzaqh",
-        "template_1fbwuf",
-        form,
-        "HDnieeFduOvZhn1Ur"
-      );
+// 🔥 Auto reply
+await emailjs.send(
+  "service_trqzaqh",   // ✅ same service id
+  "template_1fibwuf",
+  form,
+  "HDnieeFduOvZhn1Ur"
+);
 
       alert("Form Submitted ✅");
 
