@@ -3,6 +3,7 @@ import Industries from "../components/Industries";
 import Testimonials from "../components/Testimonials";
 import OfferSection from "../components/OfferSection";
 import BannerSlider from "../components/BannerSlider";
+import Cards from "../components/Cards";
 function Home() {
   return (
     <div>
@@ -11,6 +12,7 @@ function Home() {
       <Industries />
       <Testimonials />
       <OfferSection />
+      <Cards />
    
     </div>
   );

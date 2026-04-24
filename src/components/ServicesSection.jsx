@@ -44,7 +44,7 @@ function ServicesSection() {
 }
 
 const cardStyle = {
-  background: "white",
+  background: "#3e4976",
   padding: "20px",
   borderRadius: "15px",
   width: "250px",
