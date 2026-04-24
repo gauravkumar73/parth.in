@@ -1,0 +1,55 @@
+
+
+.custom-card {
+  background: #3e4976;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  height: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 20px;
+}
+
+/* Responsive tuning */
+@media (max-width: 768px) {
+  .custom-card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
