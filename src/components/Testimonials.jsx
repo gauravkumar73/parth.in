@@ -1,3 +1,4 @@
+import "./Testimonials.css";
 import { FaQuoteLeft, FaQuoteRight, FaStar } from "react-icons/fa";
 
 function Testimonials() {
@@ -31,7 +32,7 @@ function Testimonials() {
         {data.map((item, index) => (
           <div className="col-12 col-md-6 col-lg-4" key={index}>
 
-            <div className="card h-100 shadow-sm border-0 rounded-4 p-4 position-relative">
+            <div className="team h-100 shadow-sm border-0 rounded-4 p-4 position-relative">
 
               {/* Quote Top */}
               <FaQuoteLeft className="position-absolute top-0 start-0 m-3 fs-4 text-dark" />
