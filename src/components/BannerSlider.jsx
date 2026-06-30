@@ -12,7 +12,7 @@ const BannerSlider = () => {
             <h5>Hi, I'm</h5>
 
             <h1>
-              <span>Gaurav</span> Thakur
+              <span>Gaurav</span> Kumar
             </h1>
 
             <h2>Full Stack Developer</h2>
