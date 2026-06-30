@@ -1,110 +1,65 @@
 import "./BannerSlider.css";
-import { Link } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const BannerSlider = () => {
   return (
-    <div
-      id="bannerCarousel"
-      className="carousel slide"
-      data-bs-ride="carousel"
-    >
-      {/* Indicators */}
-      <div className="carousel-indicators">
-        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" className="active"></button>
-        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2"></button>
+    <section className="hero-section">
+      <div className="container">
+        <div className="row align-items-center">
+
+          {/* Left */}
+          <div className="col-lg-6 hero-content">
+            <h5>Hi, I'm</h5>
+
+            <h1>
+              <span>Gaurav</span> Thakur
+            </h1>
+
+            <h2>Full Stack Developer</h2>
+
+            <p>
+              I build responsive and user-friendly web applications
+              with modern technologies.
+            </p>
+
+            <div className="hero-btn">
+              <button className="btn btn-primary">
+                View My Work
+              </button>
+
+              <button className="btn btn-outline-light">
+                Contact Me
+              </button>
+            </div>
+
+            <div className="social-icons">
+              <a href="#"><FaGithub /></a>
+              <a href="#"><FaLinkedin /></a>
+              <a href="#"><FaTwitter /></a>
+              <a href="#"><FaInstagram /></a>
+            </div>
+
+          </div>
+
+          {/* Right */}
+          <div className="col-lg-6 text-center">
+
+            <div className="hero-image">
+
+              <div className="circle"></div>
+
+              <img
+                src="/myimg.png"
+                alt="Gaurav"
+              />
+
+            </div>
+
+          </div>
+
+        </div>
       </div>
-
-      {/* Slides */}
-      <div className="carousel-inner">
-
-        {/* Slide 1 */}
-        <div className="carousel-item active">
-          {/* Desktop Image */}
-          <img
-            src="/bann1.jpeg"
-            className="d-none d-md-block w-100"
-            alt="Banner 1"
-          />
-
-          {/* Mobile Image */}
-          <img
-            src="/mob1.jpeg"
-            className="d-block d-md-none w-100"
-            alt="Mobile Banner 1"
-          />
-
-          <div className="d-none carousel-caption">
-            <h2>Welcome to Our Store</h2>
-            <p>Best products at best price</p>
-          </div>
-        </div>
-
-        {/* Slide 2 */}
-        <div className="carousel-item">
-          {/* Desktop Image */}
-          <img
-            src="/bannerdes.jpeg"
-            className="d-none d-md-block w-100"
-            alt="Banner 2"
-          />
-
-          {/* Mobile Image */}
-          <img
-            src="/mob2.jpeg"
-            className="d-block d-md-none w-100"
-            alt="Mobile Banner 2"
-          />
-
-          <div className="d-nonecarousel-caption">
-            <h2>Big Sale</h2>
-            <p>Up to 50% Off</p>
-          </div>
-        </div>
-
-        {/* Slide 3 */}
-        <div className="carousel-item">
-          {/* Desktop Image */}
-          <img
-            src="/bannerdes2.jpeg"
-            className="d-none d-md-block w-100"
-            alt="Banner 3"
-          />
-
-          {/* Mobile Image */}
-          <img
-            src="/mob3.jpeg"
-            className="d-block d-md-none w-100"
-            alt="Mobile Banner 3"
-          />
-
-          <div className="d-none carousel-caption">
-            <h2>New Arrivals</h2>
-            <p>Check out latest products</p>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Controls */}
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#bannerCarousel"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon"></span>
-      </button>
-
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#bannerCarousel"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon"></span>
-      </button>
-    </div>
+    </section>
   );
 };
 
