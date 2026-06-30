@@ -1,54 +1,95 @@
+import "./ServicesSection.css";
+
 function ServicesSection() {
   return (
-    <div style={{ padding: "50px", textAlign: "center", background: "#black" }}>
-      
-      <h4 style={{ color: "green", letterSpacing: "2px" }}>OUR SERVICES</h4>
-      <h1>High Quality Services for You.</h1>
-      <p>We are committed to sustainability. eco-friendly initiatives.</p>
+    <section className="about-section">
+      <div className="container">
+        <div className="row align-items-center">
 
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        gap: "20px",
-        marginTop: "40px",
-        flexWrap: "wrap"
-      }}>
+          <div className="col-lg-6">
+            <span className="sub-title">ABOUT ME</span>
 
-        {/* Card 1 */}
-        <div style={cardStyle}>
-          <h3>Web Designing & Development</h3>
-          <p>We create robust web applications with latest technologies.</p>
+            <h2>
+              Passionate Full Stack Developer
+            </h2>
+
+            <p>
+              I am a passionate Full Stack Developer with experience in
+              HTML, CSS, JavaScript, Bootstrap, jQuery and React. I enjoy
+              building modern, responsive and user-friendly websites that
+              provide an excellent user experience.
+            </p>
+
+            <div className="skill-box">
+
+              <div className="skill">
+                <h5>HTML & CSS</h5>
+                <div className="progress">
+                  <div className="progress-bar" style={{width:"95%"}}></div>
+                </div>
+              </div>
+
+              <div className="skill">
+                <h5>Bootstrap</h5>
+                <div className="progress">
+                  <div className="progress-bar" style={{width:"90%"}}></div>
+                </div>
+              </div>
+
+              <div className="skill">
+                <h5>JavaScript</h5>
+                <div className="progress">
+                  <div className="progress-bar" style={{width:"85%"}}></div>
+                </div>
+              </div>
+
+              <div className="skill">
+                <h5>React JS</h5>
+                <div className="progress">
+                  <div className="progress-bar" style={{width:"80%"}}></div>
+                </div>
+              </div>
+
+            </div>
+
+            <button className="btn btn-primary mt-4">
+              Download Resume
+            </button>
+
+          </div>
+
+          <div className="col-lg-6 text-center">
+
+            <div className="about-card">
+
+              <div className="box">
+                <h1>2+</h1>
+                <p>Years Experience</p>
+              </div>
+
+              <div className="box">
+                <h1>50+</h1>
+                <p>Projects</p>
+              </div>
+
+              <div className="box">
+                <h1>100%</h1>
+                <p>Client Satisfaction</p>
+              </div>
+
+              <div className="box">
+                <h1>24/7</h1>
+                <p>Support</p>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
-
-        {/* Card 2 */}
-        <div style={cardStyle}>
-          <h3>Mobile App Development</h3>
-          <p>Custom Android & iOS apps with smooth experience.</p>
-        </div>
-
-        {/* Card 3 */}
-        <div style={cardStyle}>
-          <h3>E-Commerce Solutions</h3>
-          <p>Sell products online with secure payment integration.</p>
-        </div>
-
-        {/* Card 4 */}
-        <div style={cardStyle}>
-          <h3>Online Promotion</h3>
-          <p>Grow your brand with digital marketing solutions.</p>
-        </div>
-
       </div>
-    </div>
+    </section>
   );
 }
-
-const cardStyle = {
-  background: "#3e4976",
-  padding: "20px",
-  borderRadius: "15px",
-  width: "250px",
-  boxShadow: "0 5px 15px rgba(0,0,0,0.1)"
-};
 
 export default ServicesSection;

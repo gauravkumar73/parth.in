@@ -1,0 +1,64 @@
+.about-section{
+    background:#08111f;
+    color:white;
+    padding:100px 0;
+}
+
+.sub-title{
+    color:#4b6cff;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.about-section h2{
+    font-size:45px;
+    margin:20px 0;
+}
+
+.about-section p{
+    color:#bdbdbd;
+    line-height:30px;
+}
+
+.skill{
+    margin-top:25px;
+}
+
+.progress{
+    height:8px;
+    background:#1d2a45;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    background:#3366ff;
+}
+
+.about-card{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.box{
+    background:#101c33;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:40px;
+    transition:.4s;
+}
+
+.box:hover{
+    transform:translateY(-8px);
+    border-color:#3366ff;
+}
+
+.box h1{
+    color:#3366ff;
+    font-size:45px;
+}
+
+.box p{
+    margin-top:10px;
+}
