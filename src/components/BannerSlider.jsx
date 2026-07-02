@@ -49,7 +49,7 @@ const BannerSlider = () => {
               <div className="circle"></div>
 
               <img
-                src="/myimg.png"
+                src="https://ik.imagekit.io/0fw9yuy2p/111111111111111.png?updatedAt=1782877138285"
                 alt="Gaurav"
               />
 
