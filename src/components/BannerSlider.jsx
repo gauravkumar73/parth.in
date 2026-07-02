@@ -33,8 +33,8 @@ const BannerSlider = () => {
             </div>
 
             <div className="social-icons">
-              <a href="#"><FaGithub /></a>
-              <a href="#"><FaLinkedin /></a>
+              <a href="https://github.com/gauravkumar73/parth.in"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/gaurav-kumar-84ba3b268/"><FaLinkedin /></a>
               <a href="#"><FaTwitter /></a>
               <a href="#"><FaInstagram /></a>
             </div>
